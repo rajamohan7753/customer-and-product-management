@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Create an account{% endblock %}
+{% block content %}
+<div class="container">
+  <h1>Create an account</h1><hr>
+  <p>Please the following steps to Signup:</p>
+  <form  method="post">
+
+    {{ user_form.as_p }}
+    {% csrf_token %}
+    <p><input type="submit" name="" class="btn btn-primary" value="Create an account"></p>
+
+  </form>
+  {{user_form.errors}}
+</div>
+<div class="container">
+  <div class="d-flex justify-content-center links">
+    <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+
+  </div>
+
+</div>
+{% endblock %}
